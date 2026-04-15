@@ -1,5 +1,4 @@
 "use client";
-
 import { create } from "zustand";
 import { styles } from "@/data/styles";
 import { createHistorySlice, type HistorySlice } from "@/store/slices/historySlice";
