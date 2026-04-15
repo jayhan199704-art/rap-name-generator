@@ -1,42 +1,38 @@
 "use client";
-main
-import { useCallback } from "react";
-
-const fallbackCopy = (text: string): boolean => {
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "true");
-  textarea.style.position = "fixed";
-  textarea.style.opacity = "0";
-  textarea.style.pointerEvents = "none";
-  document.body.appendChild(textarea);
-  textarea.select();
-main
-  let success = false;
-  try {
-    success = document.execCommand("copy");
-  } finally {
-    // Guard against dev/refresh DOM timing that can detach the node early.
-    if (textarea.parentNode) {
-      textarea.parentNode.removeChild(textarea);
-    }
-  }
-main
-  return success;
-};
 
 export const useCopyToClipboard = () => {
-  return useCallback(async (text: string): Promise<boolean> => {
-    if (!text) {
-      return false;
-    }
-main
-    if (navigator.clipboard?.writeText) {
+  const copy = async (text: string) => {
+    // 现代 Clipboard API
+    if (navigator.clipboard && window.isSecureContext) {
       try {
         await navigator.clipboard.writeText(text);
         return true;
-      } catch {
+      } catch (err) {
+        console.error("Clipboard API failed:", err);
         return fallbackCopy(text);
       }
+    } else {
+      // 降级方案
+      return fallbackCopy(text);
     }
-main
+  };
+
+  const fallbackCopy = (text: string) => {
+    try {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const success = document.execCommand("copy");
+      document.body.removeChild(textarea);
+      return success;
+    } catch (err) {
+      console.error("Fallback copy failed:", err);
+      return false;
+    }
+  };
+
+  return { copy };
+};
