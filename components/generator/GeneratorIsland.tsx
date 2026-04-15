@@ -1,6 +1,6 @@
 // components/generator/GeneratorIsland.tsx
 "use client";
-
+main
 import { useEffect, useState } from "react";
 import { CopyButton } from "@/components/generator/CopyButton";
 import { GenerateButton } from "@/components/generator/GenerateButton";
@@ -18,7 +18,7 @@ export function GeneratorIsland() {
   // Prevent hydration mismatch by loading browser storage only after mount.
   const [bootstrapped, setBootstrapped] = useState(false);
   const generateName = useNameGenerator();
-
+main
   const selectedStyle = useGeneratorStore((state) => state.selectedStyle);
   const lockState = useGeneratorStore((state) => state.lockState);
   const currentName = useGeneratorStore((state) => state.currentName);
@@ -37,7 +37,7 @@ export function GeneratorIsland() {
     if (!bootstrapped || currentName) {
       return;
     }
-
+main
     const initial = generateName({ selectedStyle, lockState, currentName, recentNames });
     if (initial) {
       setCurrentName(initial);
@@ -49,11 +49,7 @@ export function GeneratorIsland() {
     if (!bootstrapped) {
       return;
     }
-
-    const timer = window.setTimeout(() => {
-      safeWriteRecentNames(recentNames);
-    }, 300);
-
+main
     return () => {
       window.clearTimeout(timer);
     };
@@ -75,4 +71,4 @@ export function GeneratorIsland() {
       <Toast entries={toasts} />
     </>
   );
-}
+main
