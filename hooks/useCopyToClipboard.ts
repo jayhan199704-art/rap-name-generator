@@ -16,6 +16,7 @@ const fallbackCopy = (text: string): boolean => {
   try {
     success = document.execCommand("copy");
   } finally {
+    // Guard against dev/refresh DOM timing that can detach the node early.
     if (textarea.parentNode) {
       textarea.parentNode.removeChild(textarea);
     }

@@ -15,6 +15,7 @@ import type { ToastEntry } from "@/types";
 
 export function GeneratorIsland() {
   const [toasts, setToasts] = useState<ToastEntry[]>([]);
+  // Prevent hydration mismatch by loading browser storage only after mount.
   const [bootstrapped, setBootstrapped] = useState(false);
   const generateName = useNameGenerator();
 

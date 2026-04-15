@@ -20,6 +20,7 @@ export const useGeneratorStore = create<GeneratorStore>()((set, get, ...rest) =>
   selectedStyle: styles[0]?.id ?? "",
   recentNames: [],
   currentName: null,
+  // Explicit client-side hydration action used by GeneratorIsland after mount.
   hydrateFromStorage: (names) => {
     const next = names.slice(0, 10);
     set(() => ({
