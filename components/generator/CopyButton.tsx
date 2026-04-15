@@ -12,7 +12,7 @@ type CopyButtonProps = {
 
 export function CopyButton({ setToasts }: CopyButtonProps) {
   const currentName = useGeneratorStore((state) => state.currentName);
-  const copy = useCopyToClipboard();
+  const { copy } = useCopyToClipboard();
 
   const addToast = (message: string) => {
     const id = crypto.randomUUID();
