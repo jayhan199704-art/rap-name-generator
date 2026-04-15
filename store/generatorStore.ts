@@ -1,5 +1,4 @@
 "use client";
-main
 import { create } from "zustand";
 import { styles } from "@/data/styles";
 import { createHistorySlice, type HistorySlice } from "@/store/slices/historySlice";
@@ -27,5 +26,5 @@ export const useGeneratorStore = create<GeneratorStore>()((set, get, ...rest) =>
       recentNames: next,
       currentName: next[0] ?? null
     }));
-  }
-main
+  },
+}));
