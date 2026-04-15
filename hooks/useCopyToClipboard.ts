@@ -1,4 +1,5 @@
 "use client";
+main
 import { useCallback } from "react";
 
 const fallbackCopy = (text: string): boolean => {
@@ -10,6 +11,7 @@ const fallbackCopy = (text: string): boolean => {
   textarea.style.pointerEvents = "none";
   document.body.appendChild(textarea);
   textarea.select();
+main
   let success = false;
   try {
     success = document.execCommand("copy");
@@ -19,6 +21,7 @@ const fallbackCopy = (text: string): boolean => {
       textarea.parentNode.removeChild(textarea);
     }
   }
+main
   return success;
 };
 
@@ -27,6 +30,7 @@ export const useCopyToClipboard = () => {
     if (!text) {
       return false;
     }
+main
     if (navigator.clipboard?.writeText) {
       try {
         await navigator.clipboard.writeText(text);
@@ -35,6 +39,4 @@ export const useCopyToClipboard = () => {
         return fallbackCopy(text);
       }
     }
-    return fallbackCopy(text);
-  }, []);
-};
+main
