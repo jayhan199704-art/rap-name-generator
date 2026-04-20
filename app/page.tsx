@@ -16,7 +16,6 @@ export default function HomePage() {
       </header>
       <ThemeToggle />
       <GeneratorIsland />
-      <FaqAccordion />
       <ShareButtons />
     </main>
   );

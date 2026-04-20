@@ -3,9 +3,6 @@
 import { useTheme } from "@/components/theme/ThemeProvider";
 
 const THEME_OPTIONS = [
-  { id: "light", label: "Light" },
-  { id: "dark", label: "Dark" },
-  { id: "system", label: "System" }
 ] as const;
 
 export function ThemeToggle() {

@@ -62,7 +62,6 @@ export function ShareButtons() {
   return (
     <section className="mx-auto w-full max-w-3xl space-y-3 rounded-2xl border border-zinc-300/70 bg-white/80 p-4 shadow-sm backdrop-blur sm:p-6 dark:border-white/10 dark:bg-zinc-900/60 dark:shadow-glow">
       <p className="text-sm text-zinc-700 dark:text-zinc-300">
-        If you&apos;re happy with your result, share it with more friends so they can get a great rap name too.
       </p>
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {sharePlatforms.map((platform) => (
@@ -72,7 +71,6 @@ export function ShareButtons() {
             onClick={() => openShareWindow(platform)}
             className="min-h-11 rounded-xl border border-zinc-300 bg-zinc-100 px-4 py-3 text-left font-semibold text-zinc-800 transition hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:border-white/10 dark:bg-zinc-800/80 dark:text-zinc-100 dark:hover:bg-zinc-700"
           >
-            Share on {platform.label}
           </button>
         ))}
       </div>
