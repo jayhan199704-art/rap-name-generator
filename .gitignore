@@ -1,1 +1,21 @@
-node_modules
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+
+# vercel
+.vercel
+
+# build outputs
+/dist
+/build
+
+# local env files
+.env*.local
+.env
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
