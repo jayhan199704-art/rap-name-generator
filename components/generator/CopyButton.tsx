@@ -1,4 +1,3 @@
-// components/generator/CopyButton.tsx
 "use client";
 
 import type { Dispatch, SetStateAction } from "react";
@@ -33,7 +32,7 @@ export function CopyButton({ setToasts }: CopyButtonProps) {
     <button
       type="button"
       onClick={handleCopy}
-      className="min-h-11 w-full rounded-xl border border-white/15 bg-zinc-900/80 px-5 py-3 font-semibold text-zinc-100 transition hover:bg-zinc-800"
+      className="min-h-11 w-full rounded-xl border border-zinc-300 bg-zinc-100 px-5 py-3 font-semibold text-zinc-800 transition hover:bg-zinc-200 dark:border-white/15 dark:bg-zinc-900/80 dark:text-zinc-100 dark:hover:bg-zinc-800"
     >
       Copy Name
     </button>
