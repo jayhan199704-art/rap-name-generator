@@ -1,4 +1,3 @@
-// components/history/RecentNames.tsx
 "use client";
 
 import { useGeneratorStore } from "@/store/generatorStore";
@@ -13,17 +12,17 @@ export function RecentNames() {
 
   return (
     <section className="space-y-3">
-      <h2 className="text-sm uppercase tracking-[0.15em] text-zinc-400">Recent names</h2>
+      <h2 className="text-sm uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400">Recent names</h2>
       <ul className="space-y-2">
         {recentNames.map((item) => (
           <li key={`${item.fullName}-${item.timestamp}`}>
             <button
               type="button"
               onClick={() => restoreFromHistory(item)}
-              className="min-h-11 w-full rounded-xl border border-white/10 bg-zinc-900/70 px-4 py-3 text-left hover:border-cyan-300/40 hover:bg-zinc-800"
+              className="min-h-11 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-left hover:border-cyan-300 hover:bg-zinc-100 dark:border-white/10 dark:bg-zinc-900/70 dark:hover:border-cyan-300/40 dark:hover:bg-zinc-800"
             >
-              <p className="font-semibold text-zinc-100">{item.fullName}</p>
-              <p className="text-xs text-zinc-400">{item.style}</p>
+              <p className="font-semibold text-zinc-900 dark:text-zinc-100">{item.fullName}</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">{item.style}</p>
             </button>
           </li>
         ))}
