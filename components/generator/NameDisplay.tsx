@@ -1,4 +1,3 @@
-// components/generator/NameDisplay.tsx
 "use client";
 
 import { NamePart } from "@/components/generator/NamePart";
@@ -21,9 +20,9 @@ export function NameDisplay() {
         <NamePart partKey="first" value={currentName?.first ?? null} locked={lockState.first} onToggleLock={handleToggle} />
         <NamePart partKey="last" value={currentName?.last ?? null} locked={lockState.last} onToggleLock={handleToggle} />
       </div>
-      <div className="rounded-xl border border-fuchsia-400/20 bg-fuchsia-500/10 p-4">
-        <p className="text-xs uppercase tracking-[0.16em] text-fuchsia-200/80">Full name</p>
-        <p className="break-words pt-1 text-2xl font-extrabold sm:text-3xl">{currentName?.fullName ?? "Generating..."}</p>
+      <div className="rounded-xl border border-fuchsia-400/30 bg-fuchsia-500/10 p-4">
+        <p className="text-xs uppercase tracking-[0.16em] text-fuchsia-800/90 dark:text-fuchsia-200/80">Full name</p>
+        <p className="break-words pt-1 text-2xl font-extrabold text-zinc-900 sm:text-3xl dark:text-zinc-100">{currentName?.fullName ?? "Generating..."}</p>
       </div>
     </section>
   );

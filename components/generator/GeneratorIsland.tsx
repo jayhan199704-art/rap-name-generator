@@ -59,7 +59,7 @@ export function GeneratorIsland() {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-3xl space-y-4 rounded-2xl border border-white/15 bg-zinc-900/60 p-4 shadow-glow backdrop-blur sm:p-6">
+      <div className="mx-auto w-full max-w-3xl space-y-4 rounded-2xl border border-zinc-300/70 bg-white/80 p-4 shadow-sm backdrop-blur sm:p-6 dark:border-white/15 dark:bg-zinc-900/60 dark:shadow-glow">
         <StyleSelector />
         <NameDisplay />
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
