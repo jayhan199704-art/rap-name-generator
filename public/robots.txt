@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rap-name-generator.org/sitemap.xml
