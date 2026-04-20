@@ -23,7 +23,7 @@ export function ThemeToggle() {
 
   return (
     <div className="fixed top-4 right-4 z-50">
-      <div className="rounded-full bg-white/10 backdrop-blur-sm p-1">
+      <div className="rounded-full border border-white/70 bg-white/80 p-1 shadow-lg backdrop-blur-md dark:border-white/20 dark:bg-black/50">
         <div className="grid grid-cols-3 gap-1" role="radiogroup" aria-label="Theme mode">
           {THEME_OPTIONS.map((option) => {
             const selected = theme === option.id;
@@ -33,8 +33,8 @@ export function ThemeToggle() {
                 onClick={() => setTheme(option.id)}
                 className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all ${
                   selected
-                    ? 'bg-white/20 text-white shadow-sm'
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                    ? 'bg-white/90 text-zinc-900 shadow-md dark:bg-black/30 dark:text-white'
+                    : 'text-zinc-700 hover:text-zinc-900 hover:bg-white/70 dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-white'
                 }`}
                 aria-pressed={selected}
               >
