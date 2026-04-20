@@ -3,9 +3,6 @@
 import { useTheme } from "@/components/theme/ThemeProvider";
 
 const THEME_OPTIONS = [
-  { id: "light", label: "浅色" },
-  { id: "dark", label: "深色" },
-  { id: "system", label: "系统" }
 ] as const;
 
 export function ThemeToggle() {

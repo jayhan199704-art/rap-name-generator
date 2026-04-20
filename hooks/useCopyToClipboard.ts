@@ -1,35 +1,30 @@
 "use client";
 
 export const useCopyToClipboard = () => {
-  const copy = async (text: string) => {
-    // 现代 Clipboard API
-    if (navigator.clipboard && window.isSecureContext) {
+  const copy = async (text: string): Promise<boolean> => {
+    // Modern Clipboard API
+    if (navigator.clipboard?.writeText) {
       try {
         await navigator.clipboard.writeText(text);
         return true;
-      } catch (err) {
-        console.error("Clipboard API failed:", err);
-        return fallbackCopy(text);
+      } catch {
+        // continue to fallback
       }
-    } else {
-      // 降级方案
-      return fallbackCopy(text);
     }
-  };
 
-  const fallbackCopy = (text: string) => {
+    // Fallback approach
     try {
       const textarea = document.createElement("textarea");
       textarea.value = text;
-      textarea.style.position = "fixed";
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
       textarea.style.left = "-9999px";
       document.body.appendChild(textarea);
       textarea.select();
       const success = document.execCommand("copy");
       document.body.removeChild(textarea);
       return success;
-    } catch (err) {
-      console.error("Fallback copy failed:", err);
+    } catch {
       return false;
     }
   };

@@ -1,3 +1,4 @@
+import { FaqAccordion } from "@/components/faq/FaqAccordion";
 import { GeneratorIsland } from "@/components/generator/GeneratorIsland";
 import { ShareButtons } from "@/components/share/ShareButtons";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
